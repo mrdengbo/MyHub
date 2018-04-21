@@ -1,0 +1,50 @@
+1.int main()  
+	{  
+	  char *str[]={"welcome","to","wuhan","farsight"}; 
+    char **p=str+1;  
+    str[0]=(*p++)+2;  
+    str[1]=*(p+1);  
+    str[2]=p[1]+3;  
+    str[3]=p[0]+(str[2]-str[1]);
+    
+    printf("%s\n", str[0]);  
+    printf("%s\n", str[1]);  
+    printf("%s\n", str[2]);  
+    printf("%s\n", str[3]);  
+    
+    return 0;
+  }
+
+2.下面的输出结果
+int main()
+{
+	char a[1000];
+	int i;
+	for(i = 0; i < 1000; i++)
+	{
+		a[i] = -1-i;
+	}
+	printf(“%d\n”, strlen(a));
+	return 0;
+}
+  
+2.设计一个函数，要求实现统计单词个数的功能。
+	例如：“   ab cd 132#    dasf da3sfa %assd dasfsa987* adad AAA”
+  单词的个数就为5个。
+  a.怎么跳过单词前面的空格？
+  b.单词的开始标志是什么？
+  c.单词的结束标志是什么？
+  d.如何跳过非法的单词？
+  e.
+  
+3.写一个函数实现如下功能，统计出一个32位整数中的统计第一个非0位之前0位的个数(从右到左，从低位到高位)。
+如：0x01返回31,0x10000返回15。（机器字长32位）。
+
+
+4.写一个函数实现大小写字母的分组，小写字母在大写字母的前面。
+
+5. 请问下面三种变量声明有何区别?请给出具体含义
+	int const *p;
+	int* const p;
+	int const* const p;
+  

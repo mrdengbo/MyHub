@@ -1,0 +1,12 @@
+1.Ctrl +Alt+T 打开终端
+2.创建目录：mkdir;
+3.创建文件：touch;
+4.Linux核心思想：一切皆文件；
+5.命令 --help  查看帮助文档；
+6.linux中“.”代表一个路径（当前目录）；
+7.linux中“..”代表一个路径（上层目录）；
+8.ubuntu@farsight:~/work/17103/one$ cp ./second second-bak（复制粘贴到当前目录）
+ubuntu@farsight:~/work/17103/one$ cp second ../second-bak（复制粘贴到上层目录）;
+9.cp命令复制粘贴目录时后面要加 -r或者 -a;
+10.cp不能复制粘贴同名的目录和文件；
+11.注意：cp复制粘贴目录时可以用 -r或者 -a,而rm 删除目录时只能用 -r;
