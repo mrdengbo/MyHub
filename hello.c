@@ -20,6 +20,7 @@ int main()
 	jfdjsajfjsajfjj;
 	jfdjsjafjl;
 	dengbo;
+	dengbo11;
 	
 	return 0;
 }
