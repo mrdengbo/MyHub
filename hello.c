@@ -19,7 +19,7 @@ int main()
 	printf("%s\n",p);
 	jfdjsajfjsajfjj;
 	jfdjsjafjl;
-	fjfdjsjfj;
+	dengbo;
 	
 	return 0;
 }
