@@ -18,6 +18,7 @@ int main()
 	printf("hello git\n");
 	printf("%s\n",p);
 	jfdjsajfjsajfjj;
+	fdjsjajjfdsjfdsj;
 	jfdjsjafjl;
 	dengbo;
 	dengbo11;
