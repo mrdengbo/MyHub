@@ -27,9 +27,12 @@ int main()
 	jfdjsjafdjfjasdj;
 	fjdsjajfjfjdsajjj2018525
 	2018610:15:55
+<<<<<<< HEAD
 	20181220;
 	jfjdsajjfjjsdfaj;
 	
+=======
+>>>>>>> modify hello.c in Dev-branch
 	
 	return 0;
 }
