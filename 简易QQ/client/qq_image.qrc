@@ -1,0 +1,21 @@
+<RCC>
+    <qresource prefix="/">
+        <file>image/245600445.jpg</file>
+        <file>image/default.png</file>
+        <file>image/123456789.jpg</file>
+        <file>image/black_font_24px_569304_easyicon.net.ico</file>
+        <file>image/clear.png</file>
+        <file>image/font_16px_1067845_easyicon.net.ico</file>
+        <file>image/font_16px_1103050_easyicon.net.ico</file>
+        <file>image/font_16px_1148178_easyicon.net.ico</file>
+        <file>image/font_16px_1148179_easyicon.net.ico</file>
+        <file>image/font_size_16px_1175787_easyicon.net.ico</file>
+        <file>image/main.jpg</file>
+        <file>image/save.png</file>
+        <file>image/send.png</file>
+        <file>image/icon_background_118px_1118543_easyicon.net.png</file>
+        <file>image/chat_brower.jpg</file>
+        <file>image/2929309_173614107001_2.jpg</file>
+        <file>image/register.jpg</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,100 @@
+/******************************************xiaoma qq 消息通信说明*************************************/
+
+/*定义客户端/服务器消息通信机制数据类型*/
+typedef struct _MsgControl {
+	unsigned char client_request; /*客户端请求*/
+	unsigned char server_reply;   /*服务端回复*/
+	unsigned char head_1;					/*控制位1*/
+	unsigned char head_2;					/*控制位2*/
+} MsgControl;
+
+enum ClientMsg {
+	LOGIN = 0,  /*登录*/
+	REGISTER ,  /*注册*/
+	LOGOUT   ,  /*注销*/
+	MSG_SEND    /*消息发送*/
+  //TODO
+};
+
+/*定义账号和密码数据类型*/
+typedef struct _AccountPasswd {
+  char account[12];  /*账号*/
+  char passwd[24];	 /*密码*/
+} AccountPasswd;
+
+MsgControl 各字段原理解析:
+服务器接收客户端消息
+	1 登录流程步骤分析
+		1.1 客户端消息设置
+				MsgControl
+					client_request = LOGIN , 设置为LOGIN登录标示
+					server_reply  暂时保留
+					head_1				暂时保留
+					head_2				暂时保留
+				AccountPasswd
+					account  账号
+					passwd	 密码
+				将MsgControl和AccountPasswd结构体对象封装数据报发送给服务器
+				
+		1.2 服务器接收数据报,解析数据报,获取MsgControl和AccountPasswd两个结构体变量
+				根据MsgControl的client_request字段执行登录处理流程函数
+				解析AccountPasswd结构体获取账户和密码
+				调用数据库的查询账号函数,判断账号是否存在
+				若账号存在,则再调用数据库的查询账号和密码函数
+		2 server_reply 暂时保留
+		3 当client_request变量为向双方发送消息时,head_1为发送方ID,head_2为接收方ID
+			当client_request变量为其它消息类型时,暂时保留
+			
+			
+服务端发送客户端消息
+		1 client_request为异常处理码(例如 成功,失败,超时)
+		2 根据server_reply消息类型,客户端做对应处理流程
+		3 head_1 暂时保留
+			head_2 暂时保留
+
+
+
+
+
+
+
+底层数据库信息说明:
+/*用户信息表*/
+各字段对应信息说明为:
+	id            用户唯一标识ID
+	account       用户账号(一般为纯数字字符串)
+	passwd        用户密码
+	nickname      用户昵称
+	individuality 用户个性签名
+	register      用户注册日期
+	last          用户上次登录日期
+	status        用户登录状态
+create table users(id integer PRIMARY KEY AUTOINCREMENT, account varchar(20), passwd varchar(20), nickname varchar(100), individuality varchar(200), register varchar(32), last varchar(32), status int);
+insert into users values (null, "245600445", "123456", "旧。", "断烛弋弋，乱我魂兮。", "2018-01-02 22:50:00", "2018-01-02 23:35:00", 0);
+insert into users values (null, "123456789", "123456", "马弈坚", "路还很长,往死里搞!", "2018-01-02 22:50:00", "2018-01-02 23:35:00", 0);
+
+insert into users values (null, "303458797", "123456", "随缘", "你好，旧时光。", "2018-01-02 22:50:00", "2018-01-02 23:35:00", 0);
+insert into users values (null, "156454741", "123456", "梦醒时分", "天道酬勤", "2018-01-02 22:50:00", "2018-01-02 23:35:00", 0);
+insert into users values (null, "435575484", "123456", "似水年华", "自己一个人的生活!", "2018-01-02 22:50:00", "2018-01-02 23:35:00", 0);
+insert into users values (null, "944414035", "123456", "如歌", "马克思曾说，唯有爱情和咳嗽无法掩饰。", "2018-01-02 22:50:00", "2018-01-02 23:35:00", 0);
+
+/*用户好友表*/
+各字段对应信息说明为:
+	id   用户唯一标识ID
+	fid  用户好友ID
+create table friend (id int(4), fid int(4));
+insert into friend values (1, 2);
+insert into friend values (2, 1);
+
+insert into friend values (1, 3);
+insert into friend values (1, 4);
+insert into friend values (1, 5);
+insert into friend values (1, 6);
+
+delete from friend where id = 1 or fid = 1;
+
+/*查询所有在线非本用户的好友id*/
+select id from users where status = 1 and id != 1
+
+/*查询本用户的所有好友id*/
+select fid from friend where id = 1
