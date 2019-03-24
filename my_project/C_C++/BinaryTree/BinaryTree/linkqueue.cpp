@@ -50,7 +50,7 @@ int enQueue(LinkQueue * linkQueue, DaTaType data)
 	linkQueue->rear->next = pTmp;
 	linkQueue->rear = pTmp;  //更新队尾节点的地址
 
-	return FALSE;
+	return OK;
 }
 
 /*数据出队*/
@@ -74,5 +74,5 @@ int popQueue(LinkQueue * linkQueue, DaTaType * outData)
 
 	*outData = data;
 
-	return FALSE;
+	return OK;
 }

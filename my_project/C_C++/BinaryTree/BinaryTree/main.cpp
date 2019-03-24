@@ -38,5 +38,5 @@ int main(int argc, const char *argv[])
 	leverTraval(root);
 	putchar('\n');
 
-	return FALSE;
+	return OK;
 }

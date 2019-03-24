@@ -9,6 +9,7 @@
 #define ERROR -1
 #define TRUE 1
 #define FALSE 0
+#define OK 0
 
 //二叉树相关结构设计
 typedef char DataType_c;
