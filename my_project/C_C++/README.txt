@@ -1,1 +1,1 @@
-C/C++ РЎПоДїБ·П°.
+C/C++ Project practice.

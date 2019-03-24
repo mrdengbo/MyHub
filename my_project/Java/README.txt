@@ -1,1 +1,1 @@
-JavaÏîÄ¿Á·Ï°.
+Java Project practice.

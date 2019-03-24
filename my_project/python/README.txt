@@ -1,1 +1,1 @@
-PythonÏîÄ¿Á·Ï°.
+Python Project practice.
