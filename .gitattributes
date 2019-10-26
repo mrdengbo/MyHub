@@ -1,3 +1,0 @@
-*.bin diff=nodiff
-*.css diff=nodiff
-*.txt diff=nodiff
